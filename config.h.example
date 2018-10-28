@@ -1,0 +1,2 @@
+#define HOSTNAME "myserver.com"
+#define PORT 12345
