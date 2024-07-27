@@ -33,6 +33,13 @@ void setup() {
   digitalWrite(4, HIGH);
 
   Serial.begin(9600);
+
+  Serial.print("HOSTNAME=");
+  Serial.println(HOSTNAME);
+
+  Serial.print("PORT=");
+  Serial.println(PORT);
+  
   Serial.println(F("Starting..."));
   Ethernet.begin(mac); // initialize ethernet
   Serial.println(Ethernet.localIP());
