@@ -83,13 +83,15 @@ void connect() {
     delay(1000);
   }
   
-  char fullServerName[40];
   
+  char fullServerName[40];
   sprintf(fullServerName,"%s:%i", HOSTNAME, PORT);
+  Serial.print("Host: "); Serial.println(fullServerName);
 
   // Handshake with the server
-  webSocketClient.path = "/";
+  webSocketClient.path = "/ingest";
   webSocketClient.host = fullServerName;
+  webSocketClient.protocol = "arduino";
 
   while(!webSocketClient.handshake(client)) {
     Serial.println("Handshake failed.");
